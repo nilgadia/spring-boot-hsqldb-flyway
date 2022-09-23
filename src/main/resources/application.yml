@@ -1,0 +1,37 @@
+server:
+  port: 2332
+  servlet:
+    context-path: /hsqldb-flyway
+
+spring:
+  application:
+    name: spring-hsqldb-flyway
+  main:
+    banner-mode: off
+  sql:
+    init:
+      platform: flyway
+  jpa:
+    show-sql: true
+    format-sql: true
+  datasource:
+    #embedded-database-connection: hsqldb
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    #url: jdbc:hsqldb:mem:hello;DB_CLOSE_DELAY=-1;sql.enforce_types=true
+    #url: jdbc:hsqldb:mem:testdb
+    url: jdbc:hsqldb:file:testdb;shutdown=true
+    username: sa
+    password:
+
+  flyway:
+    #url: jdbc:hsqldb:mem:testdb
+    url: jdbc:hsqldb:file:testdb
+    user: sa
+    password:
+    create-schemas: true
+logging:
+  level:
+    org.flywaydb: debug
+    org.springframework: info
+    org.hibernate: info
+
