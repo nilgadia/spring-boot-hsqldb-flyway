@@ -1,34 +1,39 @@
-## Database Initialization 
+## Initializing in memory database HSQLDB using flyway & connect to database using inbuilt HSQLDB access tool & play 
 
-**There are two leading open source-based tools for database version control:<br>
-Liquibase and Flyway.**<br>
+### Database Initialization 
+
+#### There are two leading open source-based tools for database version control:
+* Liquibase and Flyway
+[https://www.liquibase.com/liquibase-vs-flyway]()
+
+### Database
+
+* Leading open source inmemory database written in Java for testing purpose is HSQLDB & H2
+
+* For more details in HSQLDB refer below link
+
+[https://hsqldb.org/]()
+[https://hsqldb.org/web/hsqlDocsFrame.html]()
+
+### Prerequisite
+
+* Java 11
+* Gradle
+* IDE (Eclipse & IntelliJ)
+
+###### Import project to IDE
+###### Run the application
+###### Go to installed directory of HSQLDB jar
+`C:\..\..\.m2\repository\org\hsqldb\hsqldb\2.7.0>` <br>
+###### Run below command to start HSQLDB inbuilt database access tool
+`java -cp hsqldb.jar org.hsqldb.util.DatabaseManagerSwing`<br>
+
+###### A window will appear, enter username, password and url
+* Username - SA
+* Password 
+* url
+  * mem  - jdbc:hsqldb:hsql://<Ip Address>:<port>/<dbname> jdbc:hsqldb:hsql://localhost:9001/testdb
+  * file - jdbc:hsqldb:hsql://<Ip Address>/<dbname>;file:<database/path>
 
 
-https://www.liquibase.com/liquibase-vs-flyway
-https://www.baeldung.com/liquibase-vs-flyway
-
-## Database
-
-**Leading open source database written in Java for testing purpose is HSQLDB & H2**
-
-https://hsqldb.org/ <br>
-https://hsqldb.org/web/hsqlDocsFrame.html
-
-Running Database Access Tools
-
-java -cp ../lib/hsqldb.jar org.hsqldb.util.DatabaseManagerSwing
-java -cp hsqldb.jar org.hsqldb.util.DatabaseManagerSwing
-
-A HyperSQL Database
-
-Types of catalog data
-• mem: stored entirely in RAM - without any persistence beyond the JVM process's life
-• file: stored in file system
-• res: stored in a Java resource, such as a Jar and always read-only
-
-Running database access tool
-C:\Users\shiqbal\.m2\repository\org\hsqldb\hsqldb\2.7.0>java -cp hsqldb-2.7.0.jar org.hsqldb.util.DatabaseManagerSwing
-
-url
-mem  - jdbc:hsqldb:hsql://<Ip Address>:<port>/<dbname> <br>
-file - jdbc:hsqldb:hsql://<Ip Address>/<dbname>;file:<database/path>
+## Enjoy !!!  _Happy Learning_  ~~Play with database, practice ORM~~
